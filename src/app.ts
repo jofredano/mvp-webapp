@@ -1,19 +1,16 @@
 import express from 'express';
+import config from './config';
 
-const app = express();
-const port = 8081;
+const startServer = async () => {
+    const app = express();
 
-//Definir todas las rutas que se requieran establecer...
-app.get( "/", ( req, res ) => { 
-    res.status( 200 ).send( { status: 500, message: 'Esto es otra prueba mas para esta vuelta' } );
-} );
+    await require('./loaders').default( { expressApp: app } );
 
-app.get( "/message", ( req, res ) => { 
-    res.status( 200 ).send( { status: 200, message: 'Un servicio diferente' } );
-} );
+    app.listen( config.PORT, () => {
+        console.log( `server started at http://localhost:${config.PORT}` );
+        console.log( `smtp.host.host: ${config.SMTP.HOST}` );
+        console.log( `smtp.host.port: ${config.SMTP.PORT}` );
+    } );
+};
 
-
-//Definir el puerto por el cual la aplicacion atiende las peticiones...
-app.listen( port, () => {
-    console.log( `server started at http://localhost:${ port }` );
-} );
+startServer();
