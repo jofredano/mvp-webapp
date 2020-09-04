@@ -9,7 +9,7 @@
     "start:develop": "env-cmd -f ./.env-cmdrc.json --verbose -e develop node dist/app.js",
     "start:staging": "env-cmd -f ./.env-cmdrc.json --verbose -e staging node dist/app.js",
     "start:production": "env-cmd -f ./.env-cmdrc.json --verbose -e production node dist/app.js",
-    "start:live": "concurrently \"nodemon dist/app.js\" \"tsc -w\"",
+    "start:live": "concurrently \"yarn start:develop\" \"tsc -w\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jose Freddy Angulo Ortega",

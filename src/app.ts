@@ -10,6 +10,7 @@ const startServer = async () => {
         console.log( `server started at http://localhost:${config.PORT}` );
         console.log( `smtp.host.host: ${config.SMTP.HOST}` );
         console.log( `smtp.host.port: ${config.SMTP.PORT}` );
+        console.log( `environment: ${config.ENVIRONMENT}` );
     } );
 };
 
