@@ -1,9 +1,9 @@
 import { Router } from "express";
+import { addUserController, getUserController } from '../../controllers';
 
 const route = Router();
 export default ( app: Router ) => {
     app.use('/users', route);
-    route.get('/list', ( req, res ) => { 
-        res.status( 200 ).send( { status: 200, message: 'Un servicio diferente de usuarios' } );
-    } );
+    route.post('/register', addUserController);
+    route.post('/list', getUserController );
 };

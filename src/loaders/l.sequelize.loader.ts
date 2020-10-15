@@ -25,5 +25,5 @@ export default async (): Promise<Sequelize> => {
         UserModel
     ]);
     // sequelizeConnection.sync( { force: true } ); 
-    return sequelizeConnection;
+    return sequelizeConnection.sync( { force: true } ) ;
 };
