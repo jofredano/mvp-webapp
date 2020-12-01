@@ -151,4 +151,13 @@ Pasos
 	
 	
 	
+Websocket (tiempo real) - Java
+
+	conceptos
+
+	1.	Emit (Emitir información -> entregar data a alguien)
 	
+	Client (emit) 	- Server (on)
+	Client (on) 	- Server (emit)
+
+
